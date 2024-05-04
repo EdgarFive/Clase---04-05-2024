@@ -1,0 +1,76 @@
+﻿using Clase___04_05_2024.Formularios;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Clase___04_05_2024
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+           // MessageBox.Show($"Bienvenido a mi App");
+
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            /*comboBoxFaculdad.Items.Add("Ingeniería");
+            comboBoxFaculdad.Items.Add("Medicina");
+            comboBoxFaculdad.Items.Add("Derecho");
+
+            labelTitulo.Text = "Facultades Cargadas";*/
+        }
+
+        private void comboBoxFaculdad_SelectedValueChanged(object sender, EventArgs e)
+        {
+           // MessageBox.Show(comboBoxFaculdad.SelectedItem+"");
+        }
+
+        private void buttonOpen_Click(object sender, EventArgs e)
+        {
+            FrmRegistro frmRegi = new FrmRegistro();
+            frmRegi.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            String usr = textBoxUsuario.Text.ToLower();
+            String pwd = textBoxContrasena.Text.ToLower();
+
+            if (usr == null || pwd == null)
+            {
+                MessageBox.Show("No puede dejar un campo en blanco");
+            }
+            else
+            {
+                if (usr.Equals("admin") && pwd.Equals("admin"))
+                {
+                    FrmRegistro registro = new FrmRegistro();
+                    registro.Show();
+                }else
+                {
+                    MessageBox.Show("Usuario y Contraseña Erroneos");
+                }
+            }
+        }
+    }
+}
