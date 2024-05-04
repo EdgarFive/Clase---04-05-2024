@@ -50,26 +50,46 @@ namespace Clase___04_05_2024
             FrmRegistro frmRegi = new FrmRegistro();
             frmRegi.Show();
         }
+        int ii = 0;
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             String usr = textBoxUsuario.Text.ToLower();
             String pwd = textBoxContrasena.Text.ToLower();
-
-            if (usr == null || pwd == null)
+            ii++;
+            if (ii <3)
             {
-                MessageBox.Show("No puede dejar un campo en blanco");
+                if (usr == null || pwd == null)
+                {
+                    textBoxContrasena.Text = "";
+                    textBoxUsuario.Text = "";
+
+                    MessageBox.Show("No puede dejar un campo en blanco");
+
+                }
+                else
+                {
+                    if (usr.Equals("admin") && pwd.Equals("admin"))
+                    {
+                        FrmRegistro registro = new FrmRegistro();
+                        textBoxContrasena.Text = "";
+                        textBoxUsuario.Text = "";
+
+                        registro.Show();
+                    }
+                    else
+                    {
+                        textBoxContrasena.Text = "";
+                        textBoxUsuario.Text = "";
+
+                        MessageBox.Show("Usuario y Contraseña Erroneos");
+                    }
+                }
+
             }
             else
             {
-                if (usr.Equals("admin") && pwd.Equals("admin"))
-                {
-                    FrmRegistro registro = new FrmRegistro();
-                    registro.Show();
-                }else
-                {
-                    MessageBox.Show("Usuario y Contraseña Erroneos");
-                }
+                button1.Enabled = false;
             }
         }
     }
