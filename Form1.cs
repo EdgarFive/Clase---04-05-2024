@@ -50,8 +50,8 @@ namespace Clase___04_05_2024
             FrmRegistro frmRegi = new FrmRegistro();
             frmRegi.Show();
         }
+       
         int ii = 0;
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             String usr = textBoxUsuario.Text.ToLower();
@@ -90,6 +90,7 @@ namespace Clase___04_05_2024
             else
             {
                 button1.Enabled = false;
+                MessageBox.Show("Usuario y Contraseña Erroneos.\nYa no tienes más intentos");
             }
         }
     }
