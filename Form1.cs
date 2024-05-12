@@ -93,5 +93,10 @@ namespace Clase___04_05_2024
                 MessageBox.Show("Usuario y Contraseña Erroneos.\nYa no tienes más intentos");
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
